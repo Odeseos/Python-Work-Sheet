@@ -6,5 +6,30 @@
 
 {% block content %}
     <p class="lead">What will it be today?</p>
+    <hr>
+    <blockquote class="blockquote">
+        <p class="mb-4" id="quote">Quote</p>
+        <footer class="blockquote-footer" id="author">Author</cite></footer>
+    </blockquote>
+    <script>
+        var authors = new Array();
+        authors[0] = "Chistopher Morley";
+        authors[1] = "Dr. Robert Schuller";
+        authors[2] = "Walt Whitman";
+        authors[3] = "Napolean Bonaparte";
 
+        var quotes = new Array();
+        quotes[0] = "There is only one success: to be able to spend your life in your own way."
+        quotes[1] = "Tough times never last, but tough people do."
+        quotes[2] = "Keep your face always toward the sunshine and shadows will fall behind you."
+        quotes[3] = "Impossible is a word to be found only in the dictionary of fools."
+
+        index = Math.floor(Math.random() * quotes.length);
+        author = document.getElementById("author")
+        quote = document.getElementById("quote")
+
+        author.innerHTML = authors[index]
+        quote.innerHTML = quotes[index]
+
+</script>
 {% endblock %}
