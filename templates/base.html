@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - Host the Forest</title>
+    <link rel="stylesheet"  type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+</head>
+<body class="bg-dark text-white">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Host the Forest</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" id="add" href="add_entry">Add Entry</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="month" href="this_month">Month Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="all" href="all_entries">All-time Overview</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Hello <span class="text-warning">Björn</span></h1>
+        {% block content %}{% endblock %}
+<!--        <button class="btn btn-lg btn-block btn-danger" type="button" onclick="history.back();">Back</button>-->
+    </div>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script>
+        var d = new Date();
+        var n = d.getMonth() + 1;
+        var month = document.getElementById("month")
+        month.href = "this_month?m=" + n
+    </script>
+</body>
+</html>

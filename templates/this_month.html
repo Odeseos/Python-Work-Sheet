@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+    This Month
+{% endblock %}
+
+{% block content %}
+    <p class="lead">Let me grab this month for you~</p>
+    <table class="table table-dark table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th class="text-center">Year</th>
+                <th class="text-center">Month</th>
+                <th class="text-center">Day</th>
+                <th class="text-center">Hours</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data[0] %}
+                <tr>
+                    <td class="text-center">{{row[1]}}</td>
+                    <td class="text-center">{{row[2]}}</td>
+                    <td class="text-center">{{row[3]}}</td>
+                    <td class="text-center">{{row[4]}}</td>
+                    <td>{{row[5]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h1>A total of <span style="text-decoration: underline;" class="text-warning">{{data[1]}}</span> hours have been worked this month~</h1>
+{% endblock %}

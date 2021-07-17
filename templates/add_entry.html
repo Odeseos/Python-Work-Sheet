@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Add Entry
+{% endblock %}
+
+{% block content %}
+    <p class="lead">What have you done today?</p>
+    <form method="POST">
+        <input class="form-control col-lg-4" type="text" name="note" placeholder="Today I..." value="Today I ">
+        <hr>
+        <div class="form-group">
+            <label>Amount of hours worked?</label>
+            <input class="form-control col-lg-3" type="number" name="hours" placeholder="4" required>
+        </div>
+        <input class="btn btn-lg btn-block btn-warning mt-4" type="submit" value="Add Entry">
+    </form>
+{% endblock %}
