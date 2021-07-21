@@ -16,7 +16,6 @@ def create_table(conn):
     try:
         c = conn.cursor()
         c.execute(sql_code)
-        print("SUCCESS: SQL Statement executed successfully")
     except Exception as e:
         print(e)
 
@@ -24,7 +23,7 @@ def main():
     # Creates connection to database since
     # you can't connect to the db on a different core
     with sqlite3.connect("HTF_Hour_Database.db") as conn:
-        c = conn.cursor()
+        create_table(conn)
     webserver.start_server()
 
 if __name__ == '__main__':
