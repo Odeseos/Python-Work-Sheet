@@ -5,15 +5,18 @@
 {% endblock %}
 
 {% block content %}
+
+<script src="{{url_for('static', filename='js/bootstrap-table.min.js')}}"></script>
+<link rel="stylesheet"  type="text/css" href="{{url_for('static', filename='css/bootstrap-table.min.css')}}">
     <p class="lead">Here is everything you've done regarding Host the Forest~</p>
-   <table class="table table-dark table-striped table-bordered table-hover">
+   <table class="table table-dark table-striped table-bordered table-hover sort" data-toggle="table">
         <thead>
             <tr>
-                <th class="text-center">Year</th>
-                <th class="text-center">Month</th>
-                <th class="text-center">Day</th>
-                <th class="text-center">Hours</th>
-                <th>Note</th>
+                <th class="sortable text-center" data-sortable="true">Year</th>
+                <th class="sortable text-center" data-sortable="true">Month</th>
+                <th class="sortable text-center" data-sortable="true">Day</th>
+                <th class="sortable text-center" data-sortable="true">Hours</th>
+                <th class="sortable" data-sortable="true">Note</th>
             </tr>
         </thead>
         <tbody>
